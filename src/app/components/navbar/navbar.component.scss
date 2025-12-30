@@ -1,0 +1,25 @@
+.navbar {
+  @apply bg-white border-b border-gray-200 sticky top-0 z-50;
+}
+
+.nav-container {
+  @apply container mx-auto px-4 h-16 flex items-center justify-between;
+}
+
+.nav-logo {
+  @apply text-xl font-bold text-gray-900 hover:text-blue-600 transition cursor-pointer;
+}
+
+.nav-item {
+  @apply text-gray-600 hover:text-blue-600 font-medium transition cursor-pointer;
+}
+
+/* Style du menu déroulant */
+.dropdown-item {
+  @apply block px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition;
+}
+
+/* Style des icônes sociales */
+.social-icon {
+  @apply text-gray-400 hover:text-blue-600 transition-colors duration-200;
+}

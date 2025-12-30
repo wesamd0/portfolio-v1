@@ -1,0 +1,147 @@
+/* Conteneur principal */
+.home-container {
+  @apply min-h-screen bg-gray-50;
+}
+
+#about {
+  scroll-margin-top: 70px; 
+}
+
+/* 1. Intro */
+.hero-section {
+  @apply bg-white border-b border-gray-200 py-20 px-4 text-center;
+
+  h1 {
+    @apply text-5xl font-bold text-gray-900 mb-6 tracking-tight;
+  }
+
+  p {
+    @apply text-xl text-gray-600 max-w-2xl mx-auto mb-8;
+  }
+
+  .cta-buttons {
+    @apply flex justify-center gap-4;
+  }
+
+  .btn-primary {
+    @apply bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-gray-700 border border-gray-300 px-8 py-3 rounded-lg font-semibold hover:bg-gray-50 transition;
+  }
+}
+
+/* 2. Section Projets */
+.projects-section {
+  @apply container mx-auto px-4 py-16 max-w-5xl;
+
+  h2 {
+    @apply text-3xl font-bold text-gray-900 mb-12 text-center;
+  }
+}
+
+.projects-grid {
+  @apply grid md:grid-cols-2 gap-8;
+}
+
+/* Carte de Projet */
+.project-card {
+  @apply bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer block;
+
+  .card-header {
+    @apply h-48 bg-gray-200 flex items-center justify-center;
+    
+    &.robot-bg { @apply bg-gradient-to-br from-gray-800 to-gray-900; }
+    &.rpg-bg { @apply bg-gradient-to-br from-indigo-600 to-purple-700; }
+
+    .icon {
+      @apply text-6xl;
+    }
+  }
+
+  .card-body {
+    @apply p-6;
+
+    h3 {
+      @apply text-2xl font-bold text-gray-900 mb-2;
+    }
+
+    p {
+      @apply text-gray-600 mb-4 line-clamp-3;
+    }
+  }
+
+  .tech-stack {
+    @apply flex flex-wrap gap-2;
+
+    span {
+      @apply text-xs font-semibold px-2 py-1 bg-gray-100 text-gray-600 rounded;
+    }
+  }
+}
+
+/* --- Section À Propos Dédiée --- */
+
+.about-section {
+  @apply mt-24 mb-16;
+}
+
+.about-header {
+  @apply text-center mb-12;
+
+  h2 {
+    @apply text-2xl font-bold text-gray-900 mb-4 tracking-tight;
+  }
+
+  .divider {
+    @apply h-1 w-20 bg-blue-600 mx-auto rounded-full;
+  }
+}
+
+.about-grid {
+  @apply grid md:grid-cols-2 gap-8 max-w-5xl mx-auto;
+}
+
+/* Style des Cartes */
+.about-card {
+  @apply bg-white p-8 rounded-2xl border border-gray-100 shadow-sm transition-all duration-300 relative overflow-hidden;
+  
+  /* Petit effet de profondeur au survol */
+  &:hover {
+    @apply shadow-md transform -translate-y-1 border-blue-100;
+    
+    .card-icon {
+      @apply scale-110 rotate-3;
+    }
+  }
+
+  .card-icon {
+    @apply text-4xl mb-6 transition-transform duration-300 inline-block;
+  }
+
+  h3 {
+    @apply text-xl font-bold text-gray-900 mb-1;
+  }
+
+  .subtitle {
+    @apply text-sm text-blue-600 font-semibold mb-4 uppercase tracking-wide;
+  }
+
+  p {
+    @apply text-gray-600 leading-relaxed text-sm;
+  }
+}
+
+/* Spécificité Carte Langues */
+.language-box {
+  @apply mt-6 pt-4 border-t border-gray-100 flex items-center gap-2 text-sm text-gray-700;
+
+  .lang-label {
+    @apply font-bold text-gray-900 mr-1;
+  }
+
+  .separator {
+    @apply text-gray-300;
+  }
+}

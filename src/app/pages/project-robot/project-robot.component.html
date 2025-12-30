@@ -1,0 +1,69 @@
+<div class="page-container">
+  <div class="content-wrapper">
+    
+    <div class="header-section">
+      <h1>Robot Autonome de Navigation</h1>
+      
+    <div class="badge-container flex-wrap">
+      <span class="badge cpp">C / C++</span>
+      <span class="badge embedded">Linux Env.</span>
+      <span class="badge embedded">AVR LibC</span>
+      <span class="badge hardware">Microcontrôleur AVR</span>
+      <span class="badge hardware">Communication IR</span>
+      <span class="badge hardware">Capteurs / Interruptions</span>
+    </div>
+      
+      <p>
+        Conception d'un système de navigation autonome capable de cartographier et traverser un parcours d'obstacles en temps réel.
+      </p>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card challenge">
+        <h3>Le Challenge Technique</h3>
+        <p>
+          Le projet nécessitait la coordination de <strong>deux robots distincts</strong>. 
+          Le premier devait explorer un parcours et cartographier des obstacles à l'aide d'un capteur de lignes, puis transmettre ces données via Infrarouge au second robot, enfermé dans une zone, qui devait s'orienter et sortir en fonction des infos reçues de capteur de distance.
+        </p>
+      </div>
+
+    <div class="info-card role">
+        <h3>Responsabilité Système & Intégration</h3>
+        <p>
+          Au sein d'une équipe de 4 personnes, j'avais la responsabilité complète du Robot "Récepteur" tout en assurant l'intégration globale du système :
+        </p>
+        <ul class="role-list">
+          <li><strong>Architecture Logicielle (C) :</strong> Conception d'une machine à états complexe pour gérer les différentes phases (Attente, Réception, Centrage, Sortie) de manière déterministe.</li>
+          <li><strong>Asservissement & Capteurs :</strong> Implémentation d'algorithmes de correction de trajectoire (boucle de contrôle) pour garantir un déplacement précis malgré les imperfections mécaniques.</li>
+          <li><strong>Collaboration Technique :</strong> Support actif sur le développement du second robot (suivi de ligne) pour assurer que la chaîne complète fonctionne le jour de la démo.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mb-12">
+      <h3 class="text-2xl font-bold text-gray-900 mb-4">Le Système en Action</h3>
+      
+      <div class="bg-gray-100 rounded-lg p-4 border border-gray-200 flex justify-center">
+        <img src="/assets/images/robot.gif"
+             alt="Démonstration" 
+             class="max-h-[500px] w-auto rounded shadow-sm">
+      </div>
+
+      <p class="text-sm text-gray-600 mt-2 italic text-center">
+        Démonstration : Le robot détecte la ligne et le cartographie et continue sa navigation de manière autonome.
+      </p>
+    </div>
+
+    <div class="result-section">
+      <h3>Résultat</h3>
+      <p>
+        Le robot a démontré une autonomie totale sans le besoin d'une intervention humaine, exécutant le scénario de sortie sans déviation de la ligne de parcours et dans les temps impartis, validant ainsi la robustesse de la logique embarquée.
+      </p>
+      
+      <a href="https://github.com/ton-pseudo/ton-repo" target="_blank" class="btn-github">
+        Voir le code sur GitHub
+      </a>
+    </div>
+
+  </div>
+</div>
