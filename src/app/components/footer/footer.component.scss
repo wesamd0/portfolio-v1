@@ -27,10 +27,34 @@
 }
 
 .social-links {
-  @apply flex gap-4;
+  @apply flex flex-col gap-3;
 
   a {
-    @apply text-gray-400 hover:text-white transition font-medium;
+    @apply transition font-medium flex items-center gap-2 w-fit text-gray-300 hover:text-gray-200;
+  }
+
+  svg#icon {
+    @apply w-5 h-5;
+  }
+
+  .link-linkedin svg#icon {
+    @apply text-[#0a66c2];
+  }
+  .link-github svg#icon {
+    @apply text-gray-300;
+  }
+  .link-email svg#icon {
+    @apply text-green-500;
+  }
+
+  .link-linkedin:hover {
+    @apply text-white;
+  }
+  .link-github:hover {
+    @apply text-white;
+  }
+  .link-email:hover {
+    @apply text-white;
   }
 }
 

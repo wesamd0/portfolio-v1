@@ -4,7 +4,11 @@
 }
 
 #about {
-  scroll-margin-top: 70px; 
+  scroll-margin-top: 100px; 
+}
+
+#projects {
+  scroll-margin-top: 30px; 
 }
 
 /* 1. Intro */
@@ -84,7 +88,7 @@
 /* --- Section À Propos Dédiée --- */
 
 .about-section {
-  @apply mt-24 mb-16;
+  @apply mt-4 mb-16;
 }
 
 .about-header {

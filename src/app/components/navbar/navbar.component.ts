@@ -10,8 +10,8 @@ import { RouterLink } from '@angular/router';
 export class NavbarComponent {
   isMenuOpen = false;
 
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
+  openMenu() {
+    this.isMenuOpen = true;
   }
 
   closeMenu() {
