@@ -113,7 +113,7 @@
   
   /* Petit effet de profondeur au survol */
   &:hover {
-    @apply shadow-md transform -translate-y-1 border-blue-100;
+    @apply shadow-md transform -translate-y-1 border-blue-100 hover:-translate-y-1 cursor-pointer block;
     
     .card-icon {
       @apply scale-110 rotate-3;
