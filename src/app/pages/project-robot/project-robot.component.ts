@@ -7,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrl: './project-robot.component.scss'
 })
 export class ProjectRobotComponent {
+  selectedImage: string | null = null;
 
+  openImage(imageSrc: string): void {
+    this.selectedImage = imageSrc;
+  }
+
+  closeImage(): void {
+    this.selectedImage = null;
+  }
 }

@@ -4,7 +4,7 @@
     <div class="header-section">
       <h1>Robot Autonome de Navigation</h1>
       
-    <div class="badge-container flex-wrap">
+    <div class="badge-container">
       <span class="badge cpp">C / C++</span>
       <span class="badge embedded">Linux Env.</span>
       <span class="badge embedded">AVR LibC</span>
@@ -40,17 +40,81 @@
       </div>
     </div>
 
-    <div class="mb-12">
-      <h3 class="text-2xl font-bold text-gray-900 mb-4">Le Système en Action</h3>
+    <div class="gallery-container">
+      <h3 class="gallery-title">Images illustratives du projet</h3>
+
+      <div class="gallery-grid">
+        <figure class="gallery-card" (click)="openImage('assets/images/state-machine.png')">
+          <div class="image-wrapper">
+            <img src="assets/images/state-machine.png" alt="Machine à états">
+          </div>
+          <figcaption>Machine à états de parcours de robot 2</figcaption>
+        </figure>
+        <figure class="gallery-card" (click)="openImage('assets/images/motherboard.png')">
+          <div class="image-wrapper">
+            <img src="assets/images/motherboard.png" alt="Carte mère du robot">
+          </div>
+          <figcaption>Carte mère utilisé pour chacun des robots (Architecture fournie par INF1900)</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    @if (selectedImage) {
+      <div class="modal-overlay"
+          (click)="closeImage()">
+        
+        <img [src]="selectedImage" 
+            alt="Agrandissement" 
+            class="modal-image"
+            (click)="$event.stopPropagation()"> <button class="modal-close">&times;</button>
+      </div>
+    }
+
+    <div class="tech-section">
+      <h4 class="tech-title">
+        Environnement Technique & Matériel
+      </h4>
       
-      <div class="bg-gray-100 rounded-lg p-4 border border-gray-200 flex justify-center">
+      <div class="tech-grid">
+        
+        <div>
+          <span class="tech-label">Microcontrôleur</span>
+          <p class="tech-name">ATMega324PA (AVR)</p>
+          <p class="tech-desc">Programmation C/C++ Bare-Metal, Manipulation de registres & Interruptions.</p>
+        </div>
+
+        <div>
+          <span class="tech-label">Capteurs Distance</span>
+          <p class="tech-name">Sharp GP2Y0A21YK0F</p>
+          <p class="tech-desc">Conversion Analogique-Numérique (ADC), Filtrage de signal & Linéarisation.</p>
+        </div>
+
+        <div>
+          <span class="tech-label">Suivi de Ligne</span>
+          <p class="tech-name">Cytron Maker Line (5 Capteurs)</p>
+          <p class="tech-desc">Lecture analogique/numérique, calibration automatique & Algorithme PID.</p>
+        </div>
+
+        <div>
+          <span class="tech-label">Infrarouge</span>
+          <p class="tech-name">RX: Panasonic PNA4602 | TX: Lite-On LTE 4208</p>
+          <p class="tech-desc">Génération de porteuse 38kHz (PWM Hardware) & Démodulation de signal.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="action-section">
+      <h3 class="action-title">Le Système en Action</h3>
+      
+      <div class="action-media">
         <img src="/assets/images/robot.gif"
              alt="Démonstration" 
-             class="max-h-[500px] w-auto rounded shadow-sm">
+             class="action-image">
       </div>
 
-      <p class="text-sm text-gray-600 mt-2 italic text-center">
-        Démonstration : Le robot détecte la ligne et le cartographie et continue sa navigation de manière autonome.
+      <p class="action-caption">
+        Démonstration : Le robot 2 détecte la ligne et le cartographie et continue sa navigation de manière autonome.
       </p>
     </div>
 
@@ -60,7 +124,7 @@
         Le robot a démontré une autonomie totale sans le besoin d'une intervention humaine, exécutant le scénario de sortie sans déviation de la ligne de parcours et dans les temps impartis, validant ainsi la robustesse de la logique embarquée.
       </p>
       
-      <a href="https://github.com/ton-pseudo/ton-repo" target="_blank" class="btn-github">
+      <a href="https://github.com/wesamd0/avr-autonomous-robot" target="_blank" class="btn-github">
         Voir le code sur GitHub
       </a>
     </div>

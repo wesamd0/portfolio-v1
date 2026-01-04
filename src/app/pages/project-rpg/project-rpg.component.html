@@ -4,7 +4,7 @@
     <div class="header-section">
       <h1>RPG Tactique Multijoueur</h1>
       
-    <div class="badge-container flex-wrap"> <span class="badge cpp">Angular 17</span>
+    <div class="badge-container"> <span class="badge cpp">Angular 17</span>
         <span class="badge cpp">TypeScript</span>
         <span class="badge cpp">Node.js / Express</span>
         <span class="badge hardware">MongoDB</span>
@@ -43,16 +43,54 @@
       </div>
     </div>
 
-    <div class="mb-12">
-      <h3 class="text-2xl font-bold text-gray-900 mb-4">Visualisation Algorithmique</h3>
+    <div class="gallery-container">
+      <h3 class="gallery-title">Images illustratives du projet</h3>
+
+      <div class="gallery-grid">
+        <figure class="gallery-card" (click)="openImage('assets/images/rpg-gameplay.png')">
+          <div class="image-wrapper">
+            <img src="assets/images/rpg-gameplay.png" alt="Combat tactique RPG">
+          </div>
+          <figcaption>Combat tactique & Pathfinding</figcaption>
+        </figure>
+
+        <figure class="gallery-card" (click)="openImage('assets/images/rpg-lobby.png')">
+          <div class="image-wrapper">
+            <img src="assets/images/rpg-lobby.png" alt="Lobby Multijoueur">
+          </div>
+          <figcaption>Temps réel (Socket.io)</figcaption>
+        </figure>
+
+        <figure class="gallery-card" (click)="openImage('assets/images/rpg-editor.png')">
+          <div class="image-wrapper">
+            <img src="assets/images/rpg-editor.png" alt="Éditeur de cartes">
+          </div>
+          <figcaption>Éditeur de niveau & MongoDB</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    @if (selectedImage) {
+      <div class="modal-overlay"
+          (click)="closeImage()">
+        
+        <img [src]="selectedImage" 
+            alt="Agrandissement" 
+            class="modal-image"
+            (click)="$event.stopPropagation()"> <button class="modal-close">&times;</button>
+      </div>
+    }
+
+    <div class="algorithm-section">
+      <h3 class="title">Visualisation Algorithmique de la Portée de Déplacement</h3>
       
-      <div class="bg-gray-100 rounded-lg p-4 border border-gray-200 flex justify-center">
+      <div class="algorithm-container">
         <img src="/assets/images/rpg.gif" 
              alt="Visualisation BFS avec coûts de terrain" 
-             class="max-h-[500px] w-auto rounded shadow-sm">
+             class="algorithm-image">
       </div>
 
-      <p class="text-sm text-gray-600 mt-2 italic text-center">
+      <p class="algorithm-caption">
         Démonstration : L'algorithme <strong>BFS pondéré</strong> calcule la zone de déplacement accessible. 
         Notez comment la portée est réduite sur l'eau (coût élevé) et bloquée par les murs, mais étendue sur la glace.
       </p>
@@ -65,9 +103,14 @@
         Le système gère de manière stable la concurrence multi-joueurs et assure l'intégrité complète de l'historique des jeux crées et modifiés.
       </p>
       
-      <a href="https://github.com/ton-pseudo/ton-repo-rpg" target="_blank" class="btn-github">
-        Voir le code complet sur GitHub
-      </a>
+      <div class="buttons">
+        <a href="https://github.com/wesamd0/tactical-rpg-web" target="_blank" class="btn-github">
+          Voir le code sur GitHub
+        </a>
+        <a href="http://polytechnique-montr-al.gitlab.io/log2990/20251/equipe-312/log2990-312/#/home" target="_blank" class="btn-deployed">
+          Voir le site déployé
+        </a>
+      </div>
     </div>
 
   </div>

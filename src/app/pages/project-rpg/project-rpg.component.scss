@@ -75,6 +75,25 @@
   }
 }
 
+/* Images */
+.gallery-grid {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-6 mt-8;
+}
+
+.gallery-card {
+  .image-wrapper {
+    @apply overflow-hidden rounded-xl shadow-lg border border-gray-100;
+
+    img {
+      @apply w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110;
+    }
+  }
+
+  figcaption {
+    @apply mt-3 text-sm text-center text-gray-600 font-medium;
+  }
+}
+
 /* Résultat final */
 .result-section {
   @apply bg-blue-50 p-6 rounded-lg text-center;
@@ -88,6 +107,112 @@
   }
 }
 
-.btn-github {
-  @apply inline-block bg-gray-900 text-white px-6 py-3 rounded hover:bg-gray-700 transition mt-6;
+.buttons {
+  @apply flex justify-center gap-4 mt-6;
+
+  .btn-github {
+    @apply inline-block bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition mt-6 text-sm md:text-base;
+  }
+
+  .btn-deployed {
+    @apply inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition mt-6 ml-4 text-sm md:text-base;
+  }
+}
+
+/* Galerie d'images */
+.gallery-container {
+  @apply mb-12;
+}
+
+.gallery-title {
+  @apply text-2xl font-bold text-gray-900 mb-8;
+}
+
+/* Images */
+.gallery-grid {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-6;
+}
+
+.gallery-card {
+  @apply cursor-pointer;
+
+  .image-wrapper {
+    @apply overflow-hidden rounded-xl shadow-lg border border-gray-200 transition-all duration-300;
+
+    img {
+      @apply w-full h-48 object-cover transition-transform duration-500;
+    }
+  }
+
+  figcaption {
+    @apply mt-3 text-sm text-center text-gray-600 font-medium;
+  }
+
+  &:hover .image-wrapper img {
+    @apply scale-110;
+  }
+
+  &:hover .image-wrapper {
+    @apply shadow-2xl border-gray-300;
+  }
+}
+
+/* Agrandissement d'image */
+.modal-overlay {
+  @apply fixed inset-0 z-50 flex items-center justify-center bg-black/95 p-4 cursor-pointer;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-image {
+  @apply max-w-[90vw] max-h-[85vh] rounded-lg shadow-2xl object-contain;
+  animation: scaleIn 0.3s ease-out;
+}
+
+.modal-close {
+  @apply absolute top-6 right-6 text-white text-4xl font-bold cursor-pointer hover:text-gray-300 transition-colors;
+
+  &:hover {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Section algorithme */
+.algorithm-section {
+  @apply mb-12;
+}
+
+.title {
+  @apply text-2xl font-bold text-gray-900 mb-4;
+}
+
+.algorithm-container {
+  @apply bg-gray-100 rounded-lg p-4 border border-gray-200 flex justify-center;
+}
+
+.algorithm-image {
+  @apply max-h-[500px] w-auto rounded shadow-sm;
+}
+
+.algorithm-caption {
+  @apply text-sm text-gray-600 mt-2 italic text-center;
 }
