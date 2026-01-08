@@ -7,8 +7,8 @@
       Actuellement en troisième année à Polytechnique Montréal.
     </p>
     <div class="cta-buttons">
-      <a href="#projects" class="btn-primary">Voir mes projets</a>
-      <a href="#about" class="btn-secondary">En savoir plus de moi</a>
+      <a (click)="scrollToSection('projects')" class="btn-primary cursor-pointer">Voir mes projets</a>
+      <a (click)="scrollToSection('about')" class="btn-secondary cursor-pointer">En savoir plus de moi</a>
     </div>
   </section>
 
@@ -16,23 +16,24 @@
     <h2>Projets Récents</h2>
     
     <div class="projects-grid">
-      
-      <a routerLink="/robot" class="project-card">
-        <div class="card-header robot-bg">
-          <span class="icon">🤖</span>
-        </div>
-        <div class="card-body">
-          <h3>Robot Autonome</h3>
-          <p>
-            Système multi-robots autonome avec communication infrarouge, cartographie et navigation sur microcontrôleur.
-          </p>
-          <div class="tech-stack">
-            <span>C / C++</span>
-            <span>Linux Env.</span>
-            <span>AVR LibC</span>
-            <span>Systèmes Embarqués</span>
+
+      <a routerLink="/rpg-evolution" class="project-card project-active">
+          <div class="card-header mobile-bg">
+              <span class="icon">📱</span>
           </div>
-        </div>
+          <div class="card-body">
+            <h3>Écosystème Cross-Play Distribué & Mobile</h3>
+            <p>
+            Architecture synchronisant un client <strong>Desktop</strong> et une app <strong>Mobile</strong> pour une expérience de jeu unifiée (Cross-Play) en temps réel.              
+            </p>
+            <div class="tech-stack">
+              <span>Flutter / Dart</span>
+              <span>Socket.io</span>
+              <span>Node.js</span>
+              <span>AWS</span>
+              <span>SRS</span>
+            </div>
+          </div>
       </a>
 
       <a routerLink="/rpg" class="project-card">
@@ -50,6 +51,24 @@
             <span>MongoDB</span>
             <span>AWS</span>
             <span>CI/CD</span>
+          </div>
+        </div>
+      </a>
+      
+      <a routerLink="/robot" class="project-card">
+        <div class="card-header robot-bg">
+          <span class="icon">🤖</span>
+        </div>
+        <div class="card-body">
+          <h3>Robot Autonome</h3>
+          <p>
+            Système multi-robots autonome avec communication infrarouge, cartographie et navigation sur microcontrôleur.
+          </p>
+          <div class="tech-stack">
+            <span>C / C++</span>
+            <span>Linux Env.</span>
+            <span>AVR LibC</span>
+            <span>Systèmes Embarqués</span>
           </div>
         </div>
       </a>

@@ -57,23 +57,6 @@
   @apply list-disc list-inside mt-2 text-gray-700 text-sm space-y-1;
 }
 
-/* Section Code */
-.code-window {
-  @apply bg-gray-900 rounded-lg p-6 mb-12 shadow-lg overflow-hidden;
-
-  .window-header {
-    @apply text-white font-bold mb-4 border-b border-gray-700 pb-2;
-  }
-
-  .code-content {
-    @apply font-mono text-sm text-green-400 overflow-x-auto;
-  }
-
-  .window-footer {
-    @apply mt-4 text-gray-400 text-xs italic;
-  }
-}
-
 /* Galerie d'images */
 .gallery-container {
   @apply mb-12;

@@ -16,11 +16,14 @@
 
         @if (isMenuOpen) {
           <div class="dropdown-panel" (mouseenter)="openMenu()" (mouseleave)="closeMenu()">
-            <a routerLink="/robot" (click)="closeMenu()" class="dropdown-item">
-              🤖 Robot Autonome
+            <a routerLink="/rpg-evolution" (click)="closeMenu()" class="dropdown-item">
+              📱 RPG Tactique Distribué
             </a>
             <a routerLink="/rpg" (click)="closeMenu()" class="dropdown-item">
               ⚔️ RPG Tactique
+            </a>
+            <a routerLink="/robot" (click)="closeMenu()" class="dropdown-item">
+              🤖 Robot Autonome
             </a>
           </div>
         }
