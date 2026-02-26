@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { TranslatePipe } from '../../shared/translate.pipe';
 
 @Component({
   selector: 'app-project-rpg',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './project-rpg.component.html',
   styleUrl: './project-rpg.component.scss'
 })

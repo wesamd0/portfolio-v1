@@ -2,59 +2,54 @@
   <div class="content-wrapper">
     
     <div class="header-section">
-      <h1>Robot Autonome de Navigation</h1>
+      <h1>{{ 'projectRobot.title' | t }}</h1>
       
     <div class="badge-container">
       <span class="badge cpp">C / C++</span>
       <span class="badge embedded">Linux Env.</span>
       <span class="badge embedded">AVR LibC</span>
-      <span class="badge hardware">Microcontrôleur AVR</span>
+      <span class="badge hardware">{{ 'projectRobot.badgeMicrocontroller' | t }}</span>
       <span class="badge hardware">Communication IR</span>
-      <span class="badge hardware">Capteurs / Interruptions</span>
+      <span class="badge hardware">{{ 'projectRobot.badgeSensors' | t }}</span>
     </div>
       
       <p>
-        Conception d'un système de navigation autonome capable de cartographier et traverser un parcours d'obstacles en temps réel.
+        {{ 'projectRobot.description' | t }}
       </p>
     </div>
 
     <div class="info-grid">
       <div class="info-card challenge">
-        <h3>Le Challenge Technique</h3>
-        <p>
-          Le projet nécessitait la coordination de <strong>deux robots distincts</strong>. 
-          Le premier devait explorer un parcours et cartographier des obstacles à l'aide d'un capteur de lignes, puis transmettre ces données via Infrarouge au second robot, enfermé dans une zone, qui devait s'orienter et sortir en fonction des infos reçues de capteur de distance.
-        </p>
+        <h3>{{ 'projectRobot.challengeTitle' | t }}</h3>
+        <p [innerHTML]="'projectRobot.challengeDescription' | t"></p>
       </div>
 
     <div class="info-card role">
-        <h3>Responsabilité Système & Intégration</h3>
-        <p>
-          Au sein d'une équipe de 4 personnes, j'avais la responsabilité complète du Robot "Récepteur" tout en assurant l'intégration globale du système :
-        </p>
+        <h3>{{ 'projectRobot.responsibilityTitle' | t }}</h3>
+        <p>{{ 'projectRobot.responsibilityDescription' | t }}</p>
         <ul class="role-list">
-          <li><strong>Architecture Logicielle (C) :</strong> Conception d'une machine à états complexe pour gérer les différentes phases (Attente, Réception, Centrage, Sortie) de manière déterministe.</li>
-          <li><strong>Asservissement & Capteurs :</strong> Implémentation d'algorithmes de correction de trajectoire (boucle de contrôle) pour garantir un déplacement précis malgré les imperfections mécaniques.</li>
-          <li><strong>Collaboration Technique :</strong> Support actif sur le développement du second robot (suivi de ligne) pour assurer que la chaîne complète fonctionne le jour de la démo.</li>
+          <li [innerHTML]="'projectRobot.role1' | t"></li>
+          <li [innerHTML]="'projectRobot.role2' | t"></li>
+          <li [innerHTML]="'projectRobot.role3' | t"></li>
         </ul>
       </div>
     </div>
 
     <div class="gallery-container">
-      <h3 class="gallery-title">Images illustratives du projet</h3>
+      <h3 class="gallery-title">{{ 'projectRobot.galleryTitle' | t }}</h3>
 
       <div class="gallery-grid">
         <figure class="gallery-card" (click)="openImage('assets/images/state-machine.png')">
           <div class="image-wrapper">
-            <img src="assets/images/state-machine.png" alt="Machine à états">
+            <img src="assets/images/state-machine.png" [alt]="'projectRobot.img1Alt' | t">
           </div>
-          <figcaption>Machine à états de parcours de robot 2</figcaption>
+          <figcaption>{{ 'projectRobot.img1Caption' | t }}</figcaption>
         </figure>
         <figure class="gallery-card" (click)="openImage('assets/images/motherboard.png')">
           <div class="image-wrapper">
-            <img src="assets/images/motherboard.png" alt="Carte mère du robot">
+            <img src="assets/images/motherboard.png" [alt]="'projectRobot.img2Alt' | t">
           </div>
-          <figcaption>Carte mère utilisé pour chacun des robots (Architecture fournie par INF1900)</figcaption>
+          <figcaption>{{ 'projectRobot.img2Caption' | t }}</figcaption>
         </figure>
       </div>
     </div>
@@ -64,7 +59,7 @@
           (click)="closeImage()">
         
         <img [src]="selectedImage" 
-            alt="Agrandissement" 
+            [alt]="'projectRobot.zoomAlt' | t" 
             class="modal-image"
             (click)="$event.stopPropagation()"> <button class="modal-close">&times;</button>
       </div>
@@ -72,60 +67,56 @@
 
     <div class="tech-section">
       <h4 class="tech-title">
-        Environnement Technique & Matériel
+        {{ 'projectRobot.techTitle' | t }}
       </h4>
       
       <div class="tech-grid">
         
         <div>
-          <span class="tech-label">Microcontrôleur</span>
-          <p class="tech-name">ATMega324PA (AVR)</p>
-          <p class="tech-desc">Programmation C/C++ Bare-Metal, Manipulation de registres & Interruptions.</p>
+          <span class="tech-label">{{ 'projectRobot.techLabel1' | t }}</span>
+          <p class="tech-name">{{ 'projectRobot.techDesc1' | t }}</p>
+          <p class="tech-desc">{{ 'projectRobot.techSub1' | t }}</p>
         </div>
 
         <div>
-          <span class="tech-label">Capteurs Distance</span>
-          <p class="tech-name">Sharp GP2Y0A21YK0F</p>
-          <p class="tech-desc">Conversion Analogique-Numérique (ADC), Filtrage de signal & Linéarisation.</p>
+          <span class="tech-label">{{ 'projectRobot.techLabel2' | t }}</span>
+          <p class="tech-name">{{ 'projectRobot.techDesc2' | t }}</p>
+          <p class="tech-desc">{{ 'projectRobot.techSub2' | t }}</p>
         </div>
 
         <div>
-          <span class="tech-label">Suivi de Ligne</span>
-          <p class="tech-name">Cytron Maker Line (5 Capteurs)</p>
-          <p class="tech-desc">Lecture analogique/numérique, calibration automatique & Algorithme PID.</p>
+          <span class="tech-label">{{ 'projectRobot.techLabel3' | t }}</span>
+          <p class="tech-name">{{ 'projectRobot.techDesc3' | t }}</p>
+          <p class="tech-desc">{{ 'projectRobot.techSub3' | t }}</p>
         </div>
 
         <div>
-          <span class="tech-label">Infrarouge</span>
-          <p class="tech-name">RX: Panasonic PNA4602 | TX: Lite-On LTE 4208</p>
-          <p class="tech-desc">Génération de porteuse 38kHz (PWM Hardware) & Démodulation de signal.</p>
+          <span class="tech-label">{{ 'projectRobot.techLabel4' | t }}</span>
+          <p class="tech-name">{{ 'projectRobot.techDesc4' | t }}</p>
+          <p class="tech-desc">{{ 'projectRobot.techSub4' | t }}</p>
         </div>
 
       </div>
     </div>
 
     <div class="action-section">
-      <h3 class="action-title">Le Système en Action</h3>
+      <h3 class="action-title">{{ 'projectRobot.actionTitle' | t }}</h3>
       
       <div class="action-media">
         <img src="/assets/images/robot.gif"
-             alt="Démonstration" 
+             [alt]="'projectRobot.actionAlt' | t" 
              class="action-image">
       </div>
 
-      <p class="action-caption">
-        Démonstration : Le robot 2 détecte la ligne et le cartographie et continue sa navigation de manière autonome.
-      </p>
+      <p class="action-caption">{{ 'projectRobot.actionCaption' | t }}</p>
     </div>
 
     <div class="result-section">
-      <h3>Résultat</h3>
-      <p>
-        Le robot a démontré une autonomie totale sans le besoin d'une intervention humaine, exécutant le scénario de sortie sans déviation de la ligne de parcours et dans les temps impartis, validant ainsi la robustesse de la logique embarquée.
-      </p>
+      <h3>{{ 'projectRobot.resultTitle' | t }}</h3>
+      <p>{{ 'projectRobot.resultDescription' | t }}</p>
       
       <a href="https://github.com/wesamd0/avr-autonomous-robot" target="_blank" class="btn-github">
-        Voir le code sur GitHub
+        {{ 'projectRobot.github' | t }}
       </a>
     </div>
 
