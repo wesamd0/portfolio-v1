@@ -4,22 +4,22 @@
     <div class="footer-col">
       <h3>Wesam Dawod</h3>
       <p>
-        Étudiant en Génie Logiciel à Polytechnique Montréal.
+        {{ 'footer.student' | t }}
       </p>
     </div>
 
     <div class="footer-col">
-      <h3>Projets</h3>
+      <h3>{{ 'footer.projects' | t }}</h3>
       <div class="footer-links">
-        <a routerLink="/rpg-evolution">📱 RPG Tactique Distribué</a>
-        <a routerLink="/rpg">⚔️ RPG Tactique</a>
-        <a routerLink="/robot">🤖 Robot Autonome</a>
-        <a routerLink="/">🏠 Accueil</a>
+        <a routerLink="/rpg-evolution">{{ 'navbar.projectDistributed' | t }}</a>
+        <a routerLink="/rpg">{{ 'navbar.projectRpg' | t }}</a>
+        <a routerLink="/robot">{{ 'navbar.projectRobot' | t }}</a>
+        <a routerLink="/">🏠 {{ 'navbar.home' | t }}</a>
       </div>
     </div>
 
     <div class="footer-col">
-      <h3>Me Contacter</h3>      
+      <h3>{{ 'footer.contact' | t }}</h3>
       <div class="social-links">
         <a href="https://www.linkedin.com/in/wesam-dawod/" target="_blank" class="link-linkedin">
             LinkedIn
@@ -34,7 +34,7 @@
             </svg>
         </a>
         <a (click)="onEmailClick()" class="cursor-pointer link-email">
-            Courriel
+          {{ 'footer.email' | t }}
             <svg id="icon" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
                 <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
@@ -46,6 +46,6 @@
   </div>
 
   <div class="copyright">
-    &copy; 2025 Wesam Dawod. Tous droits réservés. Codé avec Angular & Tailwind.
+    {{ 'footer.copyright' | t }}
   </div>
 </footer>

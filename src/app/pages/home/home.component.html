@@ -1,19 +1,18 @@
 <div class="home-container">
   
   <section class="hero-section">
-    <h1>Étudiant en Génie Logiciel</h1>
+    <h1>{{ 'home.heroTitle' | t }}</h1>
     <p>
-      Passionné par le développement web et logiciel et la résolution de problèmes complexes. 
-      Actuellement en troisième année à Polytechnique Montréal.
+      {{ 'home.heroDescription' | t }}
     </p>
     <div class="cta-buttons">
-      <a (click)="scrollToSection('projects')" class="btn-primary cursor-pointer">Voir mes projets</a>
-      <a (click)="scrollToSection('about')" class="btn-secondary cursor-pointer">En savoir plus de moi</a>
+      <a (click)="scrollToSection('projects')" class="btn-primary cursor-pointer">{{ 'home.viewProjects' | t }}</a>
+      <a (click)="scrollToSection('about')" class="btn-secondary cursor-pointer">{{ 'home.learnMore' | t }}</a>
     </div>
   </section>
 
   <section id="projects" class="projects-section">
-    <h2>Projets Récents</h2>
+    <h2>{{ 'home.recentProjects' | t }}</h2>
     
     <div class="projects-grid">
 
@@ -22,9 +21,9 @@
               <span class="icon">📱</span>
           </div>
           <div class="card-body">
-            <h3>Écosystème Cross-Play Distribué & Mobile</h3>
+            <h3>{{ 'home.crossPlayTitle' | t }}</h3>
             <p>
-            Architecture synchronisant un client <strong>Desktop</strong> et une app <strong>Mobile</strong> pour une expérience de jeu unifiée (Cross-Play) en temps réel.              
+              {{ 'home.crossPlayDescription' | t }}
             </p>
             <div class="tech-stack">
               <span>Flutter / Dart</span>
@@ -41,9 +40,9 @@
           <span class="icon">⚔️</span>
         </div>
         <div class="card-body">
-          <h3>RPG Tactique Web</h3>
+          <h3>{{ 'home.rpgTitle' | t }}</h3>
           <p>
-            Application Full Stack multijoueur temps réel avec architecture distribuée et déploiement automatisé.
+            {{ 'home.rpgDescription' | t }}
           </p>
           <div class="tech-stack">
             <span>Angular 17</span>
@@ -60,15 +59,15 @@
           <span class="icon">🤖</span>
         </div>
         <div class="card-body">
-          <h3>Robot Autonome</h3>
+          <h3>{{ 'home.robotTitle' | t }}</h3>
           <p>
-            Système multi-robots autonome avec communication infrarouge, cartographie et navigation sur microcontrôleur.
+            {{ 'home.robotDescription' | t }}
           </p>
           <div class="tech-stack">
             <span>C / C++</span>
             <span>Linux Env.</span>
             <span>AVR LibC</span>
-            <span>Systèmes Embarqués</span>
+            <span>{{ 'home.embeddedSystems' | t }}</span>
           </div>
         </div>
       </a>
@@ -79,7 +78,7 @@
   <section id="about" class="about-section">
       
       <div class="about-header">
-        <h2>Au-delà du Code</h2>
+        <h2>{{ 'home.beyondCode' | t }}</h2>
         <div class="divider"></div>
       </div>
 
@@ -87,18 +86,16 @@
         <div class="about-card academic">
           <div class="card-icon">🎓</div>
           <div class="card-content">
-            <h3>Futur Ingénieur Logiciel</h3>
-            <p class="subtitle">Polytechnique Montréal | 3ème Année</p>
-            <p>
-              Issu d'un parcours en <strong>Sciences Pures et Appliquées</strong>, je possède une base mathématique solide que j'applique aujourd'hui à l'architecture logicielle.
-            </p>
+            <h3>{{ 'home.futureEngineer' | t }}</h3>
+            <p class="subtitle">{{ 'home.academicSubtitle' | t }}</p>
+            <p [innerHTML]="'home.academicDescription' | t"></p>
             <div class="language-box">
-              <span class="lang-label">Trilingue :</span>
-              <span class="lang">Français</span>
+              <span class="lang-label">{{ 'home.trilingual' | t }}</span>
+              <span class="lang">{{ 'home.french' | t }}</span>
               <span class="separator">•</span>
-              <span class="lang">Anglais</span>
+              <span class="lang">{{ 'home.english' | t }}</span>
               <span class="separator">•</span>
-              <span class="lang">Arabe</span>
+              <span class="lang">{{ 'home.arabic' | t }}</span>
             </div>
           </div>
         </div>
@@ -106,12 +103,9 @@
         <div class="about-card pro">
           <div class="card-icon">🔥</div>
           <div class="card-content">
-            <h3>Rigueur & Gestion du Stress</h3>
-            <p class="subtitle">Ancien Cuisinier À La Cage Place Bell</p>
-            <p>
-              Travailler dans l'un des restaurants les plus achalandés de Laval m'a inculqué une discipline de fer.
-              J'ai appris à gérer des <strong>pics d'activité intenses</strong>, à prioriser les tâches en temps réel et à communiquer efficacement en équipe pour livrer un résultat parfait, peu importe la pression.
-            </p>
+            <h3>{{ 'home.discipline' | t }}</h3>
+            <p class="subtitle">{{ 'home.proSubtitle' | t }}</p>
+            <p [innerHTML]="'home.proDescription' | t"></p>
           </div>
         </div>
 

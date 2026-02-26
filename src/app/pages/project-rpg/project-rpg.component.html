@@ -2,7 +2,7 @@
   <div class="content-wrapper">
     
     <div class="header-section">
-      <h1>RPG Tactique Multijoueur</h1>
+      <h1>{{ 'projectRpg.title' | t }}</h1>
       
     <div class="badge-container"> <span class="badge cpp">Angular 17</span>
         <span class="badge cpp">TypeScript</span>
@@ -15,57 +15,50 @@
     </div>
       
       <p>
-        Conception d'une application Full Stack (Angular/Node.js) de jeu multijoueur, intégrant une synchronisation temps réel (WebSockets) et un pipeline de déploiement continu (CI/CD).
+        {{ 'projectRpg.description' | t }}
       </p>
     </div>
 
     <div class="info-grid">
       <div class="info-card challenge">
-        <h3>Le Challenge Technique</h3>
-        <p>
-          Développer une application <strong>Full Stack</strong> robuste capable de gérer des parties multijoueurs. 
-          Le défi était d'orchestrer une architecture distribuée complète.
-          Il fallait non seulement gérer la synchronisation multijoueur temps réel (WebSockets), mais aussi automatiser le déploiement (CI/CD) du serveur sur AWS et du client sur GitLab Pages sans briser la compatibilité.
-          Il fallait également tester et valider rigoureusement l'ensemble du système à travers des tests unitaires et valider la qualité du code via des revues de code.
-        </p>
+        <h3>{{ 'projectRpg.challengeTitle' | t }}</h3>
+        <p [innerHTML]="'projectRpg.challengeDescription' | t"></p>
       </div>
 
       <div class="info-card role">
-        <h3>Contribution Full Stack (Projet Agile)</h3>
-        <p>
-          Au sein d'une équipe Scrum, j'ai participé activement à <strong>l'ensemble du cycle de développement</strong>, sans me limiter à une seule technologie :
-        </p>
+        <h3>{{ 'projectRpg.contributionTitle' | t }}</h3>
+        <p [innerHTML]="'projectRpg.contributionDescription' | t"></p>
         <ul class="role-list">
-          <li><strong>Développement Transversal :</strong> Implémentation de fonctionnalités complètes, de l'interface Angular jusqu'à la logique serveur Node.js et la base de données.</li>
-          <li><strong>Assurance Qualité :</strong> Rédaction de tests unitaires (Jest/Mocha/Chai) et validation croisée du code via des revues de code (Merge Requests) rigoureuses.</li>
-          <li><strong>DevOps & Architecture :</strong> Configuration du pipeline CI/CD et participation aux décisions d'architecture (modélisation UML, API REST).</li>
+          <li [innerHTML]="'projectRpg.role1' | t"></li>
+          <li [innerHTML]="'projectRpg.role2' | t"></li>
+          <li [innerHTML]="'projectRpg.role3' | t"></li>
         </ul>
       </div>
     </div>
 
     <div class="gallery-container">
-      <h3 class="gallery-title">Images illustratives du projet</h3>
+      <h3 class="gallery-title">{{ 'projectRpg.galleryTitle' | t }}</h3>
 
       <div class="gallery-grid">
         <figure class="gallery-card" (click)="openImage('assets/images/rpg-gameplay.png')">
           <div class="image-wrapper">
-            <img src="assets/images/rpg-gameplay.png" alt="Combat tactique RPG">
+            <img src="assets/images/rpg-gameplay.png" [alt]="'projectRpg.img1Alt' | t">
           </div>
-          <figcaption>Combat tactique & Pathfinding</figcaption>
+          <figcaption>{{ 'projectRpg.img1Caption' | t }}</figcaption>
         </figure>
 
         <figure class="gallery-card" (click)="openImage('assets/images/rpg-lobby.png')">
           <div class="image-wrapper">
-            <img src="assets/images/rpg-lobby.png" alt="Lobby Multijoueur">
+            <img src="assets/images/rpg-lobby.png" [alt]="'projectRpg.img2Alt' | t">
           </div>
-          <figcaption>Temps réel (Socket.io)</figcaption>
+          <figcaption>{{ 'projectRpg.img2Caption' | t }}</figcaption>
         </figure>
 
         <figure class="gallery-card" (click)="openImage('assets/images/rpg-editor.png')">
           <div class="image-wrapper">
-            <img src="assets/images/rpg-editor.png" alt="Éditeur de cartes">
+            <img src="assets/images/rpg-editor.png" [alt]="'projectRpg.img3Alt' | t">
           </div>
-          <figcaption>Éditeur de niveau & MongoDB</figcaption>
+          <figcaption>{{ 'projectRpg.img3Caption' | t }}</figcaption>
         </figure>
       </div>
     </div>
@@ -75,40 +68,34 @@
           (click)="closeImage()">
         
         <img [src]="selectedImage" 
-            alt="Agrandissement" 
+            [alt]="'projectRpg.zoomAlt' | t" 
             class="modal-image"
             (click)="$event.stopPropagation()"> <button class="modal-close">&times;</button>
       </div>
     }
 
     <div class="algorithm-section">
-      <h3 class="title">Visualisation Algorithmique de la Portée de Déplacement</h3>
+      <h3 class="title">{{ 'projectRpg.algorithmTitle' | t }}</h3>
       
       <div class="algorithm-container">
         <img src="/assets/images/rpg.gif" 
-             alt="Visualisation BFS avec coûts de terrain" 
+             [alt]="'projectRpg.algorithmAlt' | t" 
              class="algorithm-image">
       </div>
 
-      <p class="algorithm-caption">
-        Démonstration : L'algorithme <strong>BFS pondéré</strong> calcule la zone de déplacement accessible. 
-        Notez comment la portée est réduite sur l'eau (coût élevé) et bloquée par les murs, mais étendue sur la glace.
-      </p>
+      <p class="algorithm-caption" [innerHTML]="'projectRpg.algorithmCaption' | t"></p>
     </div>
 
     <div class="result-section">
-      <h3>Résultat</h3>
-      <p>
-        Application déployée en <strong>production sur AWS</strong> via un pipeline <strong>CI/CD</strong> automatisé. 
-        Le système gère de manière stable la concurrence multi-joueurs et assure l'intégrité complète de l'historique des jeux crées et modifiés.
-      </p>
+      <h3>{{ 'projectRpg.resultTitle' | t }}</h3>
+      <p [innerHTML]="'projectRpg.resultDescription' | t"></p>
       
       <div class="buttons">
         <a href="https://github.com/wesamd0/tactical-rpg-web" target="_blank" class="btn-github">
-          Voir le code sur GitHub
+          {{ 'projectRpg.github' | t }}
         </a>
         <a href="http://polytechnique-montr-al.gitlab.io/log2990/20251/equipe-312/log2990-312/#/home" target="_blank" class="btn-deployed">
-          Voir le site déployé
+          {{ 'projectRpg.deployed' | t }}
         </a>
       </div>
     </div>

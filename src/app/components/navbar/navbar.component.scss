@@ -44,11 +44,112 @@
   @apply flex items-center gap-4 border-l border-gray-200 pl-6 ml-2;
 }
 
+.lang-switch,
+.mobile-lang-switch {
+  @apply inline-flex items-center p-0.5;
+}
+
+.lang-btn {
+  @apply min-w-10 px-2.5 py-1 text-xs font-semibold text-gray-600 rounded-md transition-all duration-200;
+}
+
+.lang-btn:hover {
+  @apply text-gray-800 bg-white/70;
+}
+
+.lang-btn:focus-visible {
+  @apply outline-none ring-2 ring-blue-500/40;
+}
+
+.lang-btn.active {
+  @apply bg-white text-blue-600 shadow-sm border border-blue-100;
+}
+
+.mobile-lang-switch {
+  @apply self-start mt-1;
+}
+
 /* Style des icônes sociales */
 .social-icon-linkedin {
   @apply text-gray-400 hover:text-[#0a66c2] transition-colors duration-200;
 }
 
 .social-icon-github {
-  @apply text-gray-400 hover:text-gray-300 transition-colors duration-200;
+  @apply text-gray-400 hover:text-[#0a66c2] transition-colors duration-200;
+}
+
+.mobile-menu-button {
+  @apply hidden flex-col justify-center items-end gap-1 w-10 h-10;
+}
+
+.hamburger-line {
+  @apply block h-0.5 bg-gray-700 rounded-full transition-all duration-300;
+  width: 1.5rem;
+}
+
+.mobile-menu-overlay {
+  @apply fixed inset-0 bg-black/30;
+}
+
+.mobile-drawer {
+  @apply fixed top-0 right-0 h-full w-72 bg-white shadow-xl border-l border-gray-200 py-24 px-6 flex flex-col gap-6;
+  animation: slideInRight 220ms ease-out;
+}
+
+.mobile-link {
+  @apply text-lg font-semibold text-gray-800 hover:text-blue-600 transition cursor-pointer;
+}
+
+.mobile-projects {
+  @apply flex flex-col gap-2;
+}
+
+.mobile-projects-trigger {
+  @apply w-full flex items-center justify-between;
+}
+
+.mobile-projects-list {
+  @apply flex flex-col gap-2 ml-1 pl-3 border-l border-gray-200;
+}
+
+.mobile-project-item {
+  @apply text-sm text-gray-600 hover:text-blue-600 transition cursor-pointer;
+}
+
+.mobile-socials {
+  @apply pt-4 mt-2 border-t border-gray-200 flex flex-col gap-3;
+}
+
+.mobile-social-link {
+  @apply text-gray-600 hover:text-blue-600 transition;
+}
+
+.mobile-social-content {
+  @apply inline-flex items-center gap-2;
+}
+
+.mobile-social-icon {
+  @apply w-4 h-4;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links,
+  .social-bar {
+    @apply hidden;
+  }
+
+  .mobile-menu-button {
+    @apply flex;
+  }
 }
