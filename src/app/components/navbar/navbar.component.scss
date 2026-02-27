@@ -96,6 +96,10 @@
   animation: slideInRight 220ms ease-out;
 }
 
+.mobile-close-button {
+  @apply absolute top-6 right-6 text-2xl leading-none text-gray-500 hover:text-gray-800 transition;
+}
+
 .mobile-link {
   @apply text-lg font-semibold text-gray-800 hover:text-blue-600 transition cursor-pointer;
 }

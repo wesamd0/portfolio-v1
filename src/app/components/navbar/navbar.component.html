@@ -69,6 +69,15 @@
     <div class="mobile-menu-overlay" (click)="closeMobileMenu()"></div>
     <aside class="mobile-drawer" role="dialog" aria-modal="true" [attr.aria-label]="'navbar.mobileDialogAria' | t">
 
+      <button
+        type="button"
+        class="mobile-close-button"
+        aria-label="Close menu"
+        (click)="closeMobileMenu()"
+      >
+        ×
+      </button>
+
       <a (click)="scrollToSection('home')" class="mobile-link">{{ 'navbar.home' | t }}</a>
 
       <div class="mobile-projects">
