@@ -16,6 +16,9 @@
 
         @if (isDesktopMenuOpen) {
           <div class="dropdown-panel" (mouseenter)="openMenu()" (mouseleave)="closeMenu()">
+            <a routerLink="/portfolio-ai" (click)="closeMenu(true)" class="dropdown-item">
+              {{ 'navbar.projectPortfolioAi' | t }}
+            </a>
             <a routerLink="/rpg-evolution" (click)="closeMenu(true)" class="dropdown-item">
               {{ 'navbar.projectDistributed' | t }}
             </a>
@@ -91,6 +94,7 @@
         @if (isMobileProjectsOpen) {
           <div class="mobile-projects-list">
             <a (click)="scrollToSection('projects')" class="mobile-project-item">{{ 'navbar.projectSection' | t }}</a>
+            <a routerLink="/portfolio-ai" (click)="closeMobileMenu()" class="mobile-project-item">{{ 'navbar.projectPortfolioAi' | t }}</a>
             <a routerLink="/rpg-evolution" (click)="closeMobileMenu()" class="mobile-project-item">{{ 'navbar.projectDistributed' | t }}</a>
             <a routerLink="/rpg" (click)="closeMobileMenu()" class="mobile-project-item">{{ 'navbar.projectRpg' | t }}</a>
             <a routerLink="/robot" (click)="closeMobileMenu()" class="mobile-project-item">{{ 'navbar.projectRobot' | t }}</a>

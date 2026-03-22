@@ -89,6 +89,8 @@
   padding: 0.4rem;
   box-shadow: 0 20px 45px rgba(2, 6, 16, 0.68);
   animation: menuPop 190ms ease-out;
+  z-index: 10;
+  pointer-events: auto;
 }
 
 .dropdown-icon {

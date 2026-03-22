@@ -8,6 +8,7 @@
     <div class="cta-buttons">
       <a (click)="scrollToSection('projects')" class="btn-primary cursor-pointer">{{ 'home.viewProjects' | t }}</a>
       <a (click)="scrollToSection('about')" class="btn-secondary cursor-pointer">{{ 'home.learnMore' | t }}</a>
+      <a href="https://wesamdawod.com" target="_blank" rel="noopener noreferrer" class="btn-tertiary cursor-pointer">{{ 'home.visitLive' | t }}</a>
     </div>
   </section>
 
@@ -15,6 +16,25 @@
     <h2>{{ 'home.recentProjects' | t }}</h2>
     
     <div class="projects-grid stagger-slide">
+
+      <a routerLink="/portfolio-ai" class="project-card project-active">
+        <div class="card-header portfolio-bg">
+          <span class="icon">💡</span>
+        </div>
+        <div class="card-body">
+          <h3>{{ 'home.portfolioAiTitle' | t }}</h3>
+          <p>
+            {{ 'home.portfolioAiDescription' | t }}
+          </p>
+          <div class="tech-stack">
+            <span>Next.js 16</span>
+            <span>React 19</span>
+            <span>TypeScript</span>
+            <span>Tailwind CSS</span>
+            <span>GROQ API</span>
+          </div>
+        </div>
+      </a>
 
       <a routerLink="/rpg-evolution" class="project-card project-active">
           <div class="card-header mobile-bg">

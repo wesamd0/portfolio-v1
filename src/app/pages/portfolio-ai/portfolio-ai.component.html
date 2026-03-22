@@ -1,0 +1,88 @@
+<div class="page-container">
+  <div class="content-wrapper">
+    
+    <div class="header-section fade-in-up">
+      <h1>{{ 'portfolioAi.title' | t }}</h1>
+      
+    <div class="badge-container">
+      <span class="badge nextjs">Next.js 16</span>
+      <span class="badge react">React 19</span>
+      <span class="badge typescript">TypeScript</span>
+      <span class="badge tailwind">Tailwind CSS</span>
+      <span class="badge ai">GROQ API</span>
+      <span class="badge framer">Framer Motion</span>
+    </div>
+      
+      <p>
+        {{ 'portfolioAi.description' | t }}
+      </p>
+    </div>
+
+    <div class="info-grid stagger-slide">
+      <div class="info-card challenge">
+        <h3>{{ 'portfolioAi.challengeTitle' | t }}</h3>
+        <p [innerHTML]="'portfolioAi.challengeDescription' | t"></p>
+      </div>
+
+    <div class="info-card role">
+        <h3>{{ 'portfolioAi.contributionTitle' | t }}</h3>
+        <p>{{ 'portfolioAi.contributionDescription' | t }}</p>
+        <ul class="role-list">
+          <li [innerHTML]="'portfolioAi.role1' | t"></li>
+          <li [innerHTML]="'portfolioAi.role2' | t"></li>
+          <li [innerHTML]="'portfolioAi.role3' | t"></li>
+          <li [innerHTML]="'portfolioAi.role4' | t"></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="info-grid stagger-slide">
+      <div class="info-card features">
+        <h3>{{ 'portfolioAi.featuresTitle' | t }}</h3>
+        <ul class="features-list">
+          <li [innerHTML]="'portfolioAi.feature1' | t"></li>
+          <li [innerHTML]="'portfolioAi.feature2' | t"></li>
+          <li [innerHTML]="'portfolioAi.feature3' | t"></li>
+          <li [innerHTML]="'portfolioAi.feature4' | t"></li>
+          <li [innerHTML]="'portfolioAi.feature5' | t"></li>
+          <li [innerHTML]="'portfolioAi.feature6' | t"></li>
+        </ul>
+      </div>
+
+      <div class="info-card result">
+        <h3>{{ 'portfolioAi.resultTitle' | t }}</h3>
+        <p [innerHTML]="'portfolioAi.resultDescription' | t"></p>
+      </div>
+    </div>
+
+    <div class="gallery-container fade-in-up">
+      <h3 class="gallery-title">{{ 'portfolioAi.galleryTitle' | t }}</h3>
+
+      <div class="gallery-grid stagger-slide">
+        <figure class="gallery-card" (click)="openImage('assets/images/personal-site.png')">
+          <div class="image-wrapper">
+            <img src="assets/images/personal-site.png" alt="Portfolio Site">
+          </div>
+          <figcaption>{{ 'portfolioAi.galleryCaption' | t }}</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <div class="deployment fade-in-up">
+      <h3>{{ 'portfolioAi.deploymentTitle' | t }}</h3>
+      <a href="https://wesamdawod.com" target="_blank" rel="noopener noreferrer" class="deployment-link">
+        {{ 'portfolioAi.deploymentLink' | t }}
+      </a>
+    </div>
+
+  </div>
+
+  @if (selectedImage) {
+    <div class="image-modal" (click)="closeImage()">
+      <div class="modal-content" (click)="$event.stopPropagation()">
+        <button class="modal-close" (click)="closeImage()">×</button>
+        <img [src]="selectedImage" alt="Zoomed preview" class="modal-image">
+      </div>
+    </div>
+  }
+</div>
