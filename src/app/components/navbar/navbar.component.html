@@ -15,7 +15,7 @@
         </button>
 
         @if (isDesktopMenuOpen) {
-          <div class="dropdown-panel" (mouseenter)="openMenu()" (mouseleave)="closeMenu()">
+          <div class="dropdown-panel">
             <a routerLink="/portfolio-ai" (click)="closeMenu(true)" class="dropdown-item">
               {{ 'navbar.projectPortfolioAi' | t }}
             </a>
