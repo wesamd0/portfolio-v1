@@ -10,11 +10,20 @@ import { TranslatePipe } from '../../shared/translate.pipe';
 })
 export class HomeComponent {
   scrollToSection(sectionId: string) {
+    if (sectionId === 'home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
     const element = document.getElementById(sectionId);
     if (element) {
-      const offsetTop = sectionId === 'projects' ? element.offsetTop - 36 : element.offsetTop - 96;
+      const navbar = document.querySelector('.navbar') as HTMLElement | null;
+      const navbarHeight = navbar?.offsetHeight ?? 96;
+      const spacing = 12;
+      const offsetTop = window.scrollY + element.getBoundingClientRect().top - navbarHeight - spacing;
+
       window.scrollTo({
-        top: offsetTop,
+        top: Math.max(0, offsetTop),
         behavior: 'smooth'
       });
     }

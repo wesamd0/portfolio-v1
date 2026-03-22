@@ -1,83 +1,138 @@
-/* Structure globale */
+@use '../../shared/styles/ui-kit' as ui;
+
 .page-container {
-  @apply min-h-screen bg-gray-50 py-12;
+  min-height: 100vh;
+  padding: 2.2rem 1rem 0;
 }
 
 .content-wrapper {
-  @apply container mx-auto px-4 max-w-4xl;
+  max-width: 64rem;
+  margin-inline: auto;
+  display: grid;
+  gap: 1.2rem;
 }
 
-/* En-tête */
+.header-section,
+.info-card,
+.result-section {
+  @include ui.glass(rgba(10, 15, 29, 0.76), rgba(125, 158, 242, 0.24), 14px);
+  border-radius: 1.2rem;
+  border: 1px solid rgba(124, 157, 241, 0.22);
+  box-shadow: 0 20px 46px rgba(2, 7, 16, 0.58);
+}
+
 .header-section {
-  @apply mb-12 text-center;
+  text-align: center;
+  padding: clamp(1.4rem, 2.8vw, 2.4rem);
 
   h1 {
-    @apply text-4xl font-bold text-gray-900 mb-4;
+    color: #f0f6ff;
+    font-size: clamp(2rem, 1.6rem + 1.6vw, 3.4rem);
+    line-height: 1.08;
+    margin-bottom: 0.8rem;
   }
 
   p {
-    @apply text-xl text-gray-600;
+    color: rgba(183, 199, 227, 0.89);
+    font-size: clamp(0.98rem, 0.9rem + 0.38vw, 1.1rem);
+    line-height: 1.7;
+    max-width: 60ch;
+    margin-inline: auto;
   }
 }
 
-/* Badges (Technologies) */
 .badge-container {
-  @apply flex justify-center gap-2 mb-6 flex-wrap;
+  @include ui.flex-center(row, center, center, 0.5rem);
+  flex-wrap: wrap;
+  margin-bottom: 0.9rem;
 }
 
 .badge {
-  @apply px-3 py-1 rounded-full text-sm font-semibold;
+  border-radius: 999px;
+  padding: 0.27rem 0.7rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 
-  &.language { @apply bg-blue-100 text-blue-800; }     /* Bleu */
-  &.tech { @apply bg-gray-200 text-gray-800; } /* Gris */
-  &.skill { @apply bg-green-100 text-green-800; } /* Vert */
+  &.language {
+    background: rgba(89, 244, 255, 0.2);
+    color: #86f4ff;
+    border: 1px solid rgba(89, 244, 255, 0.35);
+  }
+
+  &.tech {
+    background: rgba(109, 124, 255, 0.22);
+    color: #c7d1ff;
+    border: 1px solid rgba(136, 151, 255, 0.3);
+  }
+
+  &.skill {
+    background: rgba(66, 245, 179, 0.2);
+    color: #8cf7ca;
+    border: 1px solid rgba(66, 245, 179, 0.32);
+  }
 }
 
-/* Grille de contenu */
 .info-grid {
-  @apply grid md:grid-cols-2 gap-8 mb-12;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
 }
 
 .info-card {
-  @apply bg-white p-6 rounded-lg shadow-sm border-l-4;
+  @include ui.interactive-lift(-8px, 1.01, rgba(89, 244, 255, 0.21));
+  padding: 1.2rem;
 
-  &.challenge { @apply border-blue-600; }
-  &.role { @apply border-green-600; }
+  &.challenge {
+    border-left: 3px solid rgba(89, 244, 255, 0.9);
+  }
+
+  &.role {
+    border-left: 3px solid rgba(66, 245, 179, 0.86);
+  }
 
   h3 {
-    @apply text-lg font-bold mb-2;
+    color: #f0f6ff;
+    font-size: 1.08rem;
+    font-weight: 700;
+    margin-bottom: 0.55rem;
   }
 
   p {
-    @apply text-gray-700;
+    color: rgba(185, 202, 231, 0.88);
+    line-height: 1.64;
   }
 }
 
 .role-list {
-  @apply list-disc list-inside mt-2 text-gray-700 text-sm space-y-1;
+  margin-top: 0.65rem;
+  list-style: disc;
+  list-style-position: inside;
+  color: rgba(190, 206, 233, 0.9);
+  display: grid;
+  gap: 0.28rem;
+  font-size: 0.9rem;
 }
 
-/* Résultat final */
 .result-section {
-  @apply bg-blue-50 p-6 rounded-lg text-center;
+  text-align: center;
+  padding: 1.25rem;
+  background: rgba(10, 16, 30, 0.76);
 
   h3 {
-    @apply text-xl font-bold text-gray-900 mb-2;
+    color: #f0f6ff;
+    font-size: 1.26rem;
+    margin-bottom: 0.35rem;
   }
-  
+
   p {
-    @apply text-gray-800;
+    color: rgba(193, 210, 236, 0.88);
   }
 }
 
-.buttons {
-  @apply flex justify-center gap-4 mt-6;
-
-  .btn-github {
-    @apply inline-block bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition mt-6 text-sm md:text-base;
-  }
-
-  .btn-deployed {
-    @apply inline-block bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition mt-6 ml-4 text-sm md:text-base;
+@include ui.respond(md) {
+  .info-grid {
+    grid-template-columns: 1fr;
   }
 }

@@ -1,28 +1,28 @@
 <nav class="navbar">
   <div class="nav-container">
     
-    <a routerLink="/" class="nav-logo" (click)="closeMenu()">
-      Wesam Dawod<span class="text-blue-600">.Dev</span>
+    <a routerLink="/" class="nav-logo" (click)="closeMenu(true)">
+      Wesam Dawod<span class="logo-accent">.Dev</span>
     </a>
 
     <div class="nav-links">
       <a (click)="scrollToSection('home')" class="nav-item">{{ 'navbar.home' | t }}</a>
 
       <div class="nav-dropdown" (mouseenter)="openMenu()" (mouseleave)="closeMenu()" (focusin)="openMenu()" (focusout)="closeMenu()">
-        <button class="nav-item dropdown-trigger" type="button">
+        <button class="nav-item dropdown-trigger" type="button" (click)="openMenu()">
           {{ 'navbar.projects' | t }}
           <svg class="dropdown-icon" [class.rotate-180]="isDesktopMenuOpen" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
 
         @if (isDesktopMenuOpen) {
           <div class="dropdown-panel" (mouseenter)="openMenu()" (mouseleave)="closeMenu()">
-            <a routerLink="/rpg-evolution" (click)="closeMenu()" class="dropdown-item">
+            <a routerLink="/rpg-evolution" (click)="closeMenu(true)" class="dropdown-item">
               {{ 'navbar.projectDistributed' | t }}
             </a>
-            <a routerLink="/rpg" (click)="closeMenu()" class="dropdown-item">
+            <a routerLink="/rpg" (click)="closeMenu(true)" class="dropdown-item">
               {{ 'navbar.projectRpg' | t }}
             </a>
-            <a routerLink="/robot" (click)="closeMenu()" class="dropdown-item">
+            <a routerLink="/robot" (click)="closeMenu(true)" class="dropdown-item">
               {{ 'navbar.projectRobot' | t }}
             </a>
           </div>
