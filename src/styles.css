@@ -1,9 +1,198 @@
-/* You can add global styles to this file, and also import other style files */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Geist';
+  src: url('/assets/fonts/Geist-Variable.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist Pixel';
+  src: url('/assets/fonts/GeistPixel-Square.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg-main: #07090f;
+  --bg-elevated: #0d1220;
+  --bg-soft: #11182b;
+  --text-main: #eff5ff;
+  --text-soft: #96a3be;
+  --accent-cyan: #59f4ff;
+  --accent-blue: #6d7cff;
+  --accent-purple: #af78ff;
+  --accent-success: #42f5b3;
+  --glass-bg: rgba(14, 18, 31, 0.68);
+  --glass-border: rgba(133, 165, 255, 0.22);
+  --ring-glow: 0 0 0 1px rgba(89, 244, 255, 0.24), 0 0 0 7px rgba(89, 244, 255, 0.1);
+  --shadow-soft: 0 12px 30px rgba(2, 7, 16, 0.52);
+  --shadow-strong: 0 24px 58px rgba(1, 5, 13, 0.72);
+  --radius-card: 0;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Geist', 'Segoe UI', sans-serif;
+  color: var(--text-main);
+  background: #070b14;
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  display: none;
+}
+
+body::before {
+  content: none;
+}
+
+body::after {
+  content: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Geist Pixel', 'Geist', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+p,
+li,
+a,
+button,
+span {
+  letter-spacing: 0.01em;
+}
+
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+}
+
+.glass-panel {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(16px) saturate(145%);
+  -webkit-backdrop-filter: blur(16px) saturate(145%);
+  box-shadow: var(--shadow-soft);
+}
+
+.fade-in-up {
+  opacity: 0;
+  transform: translate3d(0, 1.8rem, 0) scale(0.985);
+  transition:
+    opacity 720ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.fade-in-up.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.stagger-slide > * {
+  opacity: 0;
+  transform: translate3d(0, 1.45rem, 0);
+  transition:
+    opacity 620ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.stagger-slide.is-visible > *:nth-child(1) { transition-delay: 70ms; }
+.stagger-slide.is-visible > *:nth-child(2) { transition-delay: 140ms; }
+.stagger-slide.is-visible > *:nth-child(3) { transition-delay: 210ms; }
+.stagger-slide.is-visible > *:nth-child(4) { transition-delay: 280ms; }
+.stagger-slide.is-visible > *:nth-child(5) { transition-delay: 350ms; }
+.stagger-slide.is-visible > *:nth-child(6) { transition-delay: 420ms; }
+
+.stagger-slide.is-visible > * {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.magnetic-btn {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  transition:
+    transform 240ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 240ms ease;
+}
+
+.magnetic-btn::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  background: rgba(89, 244, 255, 0.14);
+  opacity: 0;
+  filter: blur(10px);
+  transition: opacity 220ms ease;
+}
+
+.magnetic-btn:hover {
+  transform: translate3d(0, -4px, 0) scale(1.01);
+  box-shadow: var(--shadow-soft), 0 0 0 1px rgba(89, 244, 255, 0.25);
+}
+
+.magnetic-btn:hover::before {
+  opacity: 1;
+}
+
+.magnetic-btn:active {
+  transform: translate3d(0, 0, 0) scale(0.985);
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--ring-glow);
+}
+
+@keyframes orbitMesh {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.94);
+    opacity: 0.88;
+  }
+  50% {
+    transform: translate3d(2vw, -1.6vw, 0) scale(1.07);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(-1.7vw, 2vw, 0) scale(0.98);
+    opacity: 0.9;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
 }

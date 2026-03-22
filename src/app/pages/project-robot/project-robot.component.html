@@ -1,7 +1,7 @@
 <div class="page-container">
   <div class="content-wrapper">
     
-    <div class="header-section">
+    <div class="header-section fade-in-up">
       <h1>{{ 'projectRobot.title' | t }}</h1>
       
     <div class="badge-container">
@@ -18,7 +18,7 @@
       </p>
     </div>
 
-    <div class="info-grid">
+    <div class="info-grid stagger-slide">
       <div class="info-card challenge">
         <h3>{{ 'projectRobot.challengeTitle' | t }}</h3>
         <p [innerHTML]="'projectRobot.challengeDescription' | t"></p>
@@ -35,10 +35,10 @@
       </div>
     </div>
 
-    <div class="gallery-container">
+    <div class="gallery-container fade-in-up">
       <h3 class="gallery-title">{{ 'projectRobot.galleryTitle' | t }}</h3>
 
-      <div class="gallery-grid">
+      <div class="gallery-grid stagger-slide">
         <figure class="gallery-card" (click)="openImage('assets/images/state-machine.png')">
           <div class="image-wrapper">
             <img src="assets/images/state-machine.png" [alt]="'projectRobot.img1Alt' | t">
@@ -65,12 +65,12 @@
       </div>
     }
 
-    <div class="tech-section">
+    <div class="tech-section fade-in-up">
       <h4 class="tech-title">
         {{ 'projectRobot.techTitle' | t }}
       </h4>
       
-      <div class="tech-grid">
+      <div class="tech-grid stagger-slide">
         
         <div>
           <span class="tech-label">{{ 'projectRobot.techLabel1' | t }}</span>
@@ -99,7 +99,7 @@
       </div>
     </div>
 
-    <div class="action-section">
+    <div class="action-section fade-in-up">
       <h3 class="action-title">{{ 'projectRobot.actionTitle' | t }}</h3>
       
       <div class="action-media">
@@ -111,7 +111,7 @@
       <p class="action-caption">{{ 'projectRobot.actionCaption' | t }}</p>
     </div>
 
-    <div class="result-section">
+    <div class="result-section fade-in-up">
       <h3>{{ 'projectRobot.resultTitle' | t }}</h3>
       <p>{{ 'projectRobot.resultDescription' | t }}</p>
       

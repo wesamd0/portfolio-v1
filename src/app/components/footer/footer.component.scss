@@ -1,36 +1,63 @@
+@use '../../shared/styles/ui-kit' as ui;
+
 .footer {
-  @apply bg-gray-900 text-gray-300 py-12 border-t border-gray-800;
+  @include ui.glass(rgba(7, 11, 21, 0.9), rgba(122, 153, 238, 0.22), 16px);
+  position: relative;
+  margin-top: 4rem;
+  padding-block: 3.4rem 2.2rem;
+  border-top: 1px solid rgba(125, 157, 244, 0.24);
+  color: rgba(205, 219, 244, 0.84);
+  overflow: hidden;
 }
 
 .footer-container {
-  @apply container mx-auto px-4 grid md:grid-cols-3 gap-8;
+  @apply container mx-auto px-4;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
 }
 
-/* Colonnes */
 .footer-col {
   h3 {
-    @apply text-white text-lg font-bold mb-4;
+    color: #f2f7ff;
+    font-size: 1.08rem;
+    font-weight: 700;
+    margin-bottom: 0.95rem;
+    letter-spacing: -0.02em;
   }
-  
+
   p {
-    @apply text-sm text-gray-400 mb-4;
+    color: rgba(181, 198, 228, 0.88);
+    font-size: 0.93rem;
+    max-width: 30ch;
+    line-height: 1.55;
   }
 }
 
-/* Liens */
-.footer-links {
-  @apply flex flex-col gap-2;
-  
-  a {
-    @apply hover:text-white transition-colors duration-200 w-fit;
+.footer-links,
+.social-links {
+  @include ui.flex-center(column, flex-start, flex-start, 0.72rem);
+}
+
+.footer-links a,
+.social-links a {
+  @include ui.gpu-layer;
+  @include ui.flex-center(row, flex-start, center, 0.4rem);
+  color: rgba(205, 219, 244, 0.86);
+  font-size: 0.92rem;
+  font-weight: 500;
+  transition: color 220ms ease, transform 220ms ease, text-shadow 220ms ease;
+
+  &:hover {
+    color: #59f4ff;
+    transform: translate3d(3px, 0, 0);
+    text-shadow: 0 0 14px rgba(89, 244, 255, 0.42);
   }
 }
 
 .social-links {
-  @apply flex flex-col gap-3;
-
   a {
-    @apply transition font-medium flex items-center gap-2 w-fit text-gray-300 hover:text-gray-200;
+    font-weight: 600;
   }
 
   svg#icon {
@@ -38,27 +65,31 @@
   }
 
   .link-linkedin svg#icon {
-    @apply text-[#0a66c2];
-  }
-  .link-github svg#icon {
-    @apply text-gray-300;
-  }
-  .link-email svg#icon {
-    @apply text-green-500;
+    color: #5ba9ff;
   }
 
-  .link-linkedin:hover {
-    @apply text-white;
+  .link-github svg#icon {
+    color: #ced9f0;
   }
-  .link-github:hover {
-    @apply text-white;
-  }
-  .link-email:hover {
-    @apply text-white;
+
+  .link-email svg#icon {
+    color: #42f5b3;
   }
 }
 
-/* Copyright*/
 .copyright {
-  @apply border-t border-gray-800 mt-12 pt-8 text-center text-sm text-gray-500;
+  border-top: 1px solid rgba(124, 157, 237, 0.2);
+  margin-top: 2.7rem;
+  padding-top: 1.35rem;
+  text-align: center;
+  color: rgba(163, 179, 211, 0.74);
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+}
+
+@include ui.respond(md) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
 }

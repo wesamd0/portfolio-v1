@@ -13,6 +13,7 @@ export class NavbarComponent {
   isDesktopMenuOpen = false;
   isMobileMenuOpen = false;
   isMobileProjectsOpen = false;
+  private desktopCloseTimer: ReturnType<typeof setTimeout> | null = null;
 
   constructor(
     private router: Router,
@@ -32,11 +33,32 @@ export class NavbarComponent {
   }
 
   openMenu() {
+    if (this.desktopCloseTimer) {
+      clearTimeout(this.desktopCloseTimer);
+      this.desktopCloseTimer = null;
+    }
+
     this.isDesktopMenuOpen = true;
   }
 
-  closeMenu() {
-    this.isDesktopMenuOpen = false;
+  closeMenu(immediate = false) {
+    if (immediate) {
+      this.isDesktopMenuOpen = false;
+      if (this.desktopCloseTimer) {
+        clearTimeout(this.desktopCloseTimer);
+        this.desktopCloseTimer = null;
+      }
+      return;
+    }
+
+    if (this.desktopCloseTimer) {
+      clearTimeout(this.desktopCloseTimer);
+    }
+
+    this.desktopCloseTimer = setTimeout(() => {
+      this.isDesktopMenuOpen = false;
+      this.desktopCloseTimer = null;
+    }, 120);
   }
 
   toggleMobileMenu() {
@@ -45,6 +67,7 @@ export class NavbarComponent {
 
   closeMobileMenu() {
     this.isMobileMenuOpen = false;
+    this.isMobileProjectsOpen = false;
   }
 
   toggleMobileProjects() {
@@ -74,10 +97,18 @@ export class NavbarComponent {
       return;
     }
 
-    const offsetTop = sectionId === 'projects' ? element.offsetTop - 36 : element.offsetTop - 96;
+    const offsetTop = this.getScrollTarget(element);
     window.scrollTo({
       top: offsetTop,
       behavior: 'smooth'
     });
+  }
+
+  private getScrollTarget(element: HTMLElement): number {
+    const navbar = document.querySelector('.navbar') as HTMLElement | null;
+    const navbarHeight = navbar?.offsetHeight ?? 96;
+    const spacing = 12;
+    const top = window.scrollY + element.getBoundingClientRect().top - navbarHeight - spacing;
+    return Math.max(0, top);
   }
 }

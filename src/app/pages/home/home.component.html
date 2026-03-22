@@ -1,6 +1,6 @@
 <div class="home-container">
   
-  <section class="hero-section">
+  <section class="hero-section fade-in-up">
     <h1>{{ 'home.heroTitle' | t }}</h1>
     <p>
       {{ 'home.heroDescription' | t }}
@@ -11,10 +11,10 @@
     </div>
   </section>
 
-  <section id="projects" class="projects-section">
+  <section id="projects" class="projects-section fade-in-up">
     <h2>{{ 'home.recentProjects' | t }}</h2>
     
-    <div class="projects-grid">
+    <div class="projects-grid stagger-slide">
 
       <a routerLink="/rpg-evolution" class="project-card project-active">
           <div class="card-header mobile-bg">
@@ -75,14 +75,14 @@
     </div>
   </section>
 
-  <section id="about" class="about-section">
+  <section id="about" class="about-section fade-in-up">
       
       <div class="about-header">
         <h2>{{ 'home.beyondCode' | t }}</h2>
         <div class="divider"></div>
       </div>
 
-      <div class="about-grid">
+      <div class="about-grid stagger-slide">
         <div class="about-card academic">
           <div class="card-icon">🎓</div>
           <div class="card-content">
