@@ -48,11 +48,6 @@
           <li [innerHTML]="'portfolioAi.feature6' | t"></li>
         </ul>
       </div>
-
-      <div class="info-card result">
-        <h3>{{ 'portfolioAi.resultTitle' | t }}</h3>
-        <p [innerHTML]="'portfolioAi.resultDescription' | t"></p>
-      </div>
     </div>
 
     <div class="gallery-container fade-in-up">
@@ -68,11 +63,15 @@
       </div>
     </div>
 
-    <div class="deployment fade-in-up">
-      <h3>{{ 'portfolioAi.deploymentTitle' | t }}</h3>
-      <a href="https://chat.wesamdawod.com" target="_blank" rel="noopener noreferrer" class="deployment-link">
-        {{ 'portfolioAi.deploymentLink' | t }}
-      </a>
+    <div class="result-section fade-in-up">
+      <h3>{{ 'portfolioAi.resultTitle' | t }}</h3>
+      <p [innerHTML]="'portfolioAi.resultDescription' | t"></p>
+
+      <div class="buttons">
+        <a href="https://chat.wesamdawod.com" target="_blank" rel="noopener noreferrer" class="btn-deployed">
+          {{ 'portfolioAi.deploymentLink' | t }}
+        </a>
+      </div>
     </div>
 
   </div>
