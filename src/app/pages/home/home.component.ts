@@ -17,15 +17,27 @@ export class HomeComponent {
 
     const element = document.getElementById(sectionId);
     if (element) {
-      const navbar = document.querySelector('.navbar') as HTMLElement | null;
-      const navbarHeight = navbar?.offsetHeight ?? 96;
-      const spacing = 12;
-      const offsetTop = window.scrollY + element.getBoundingClientRect().top - navbarHeight - spacing;
+      this.revealScrollTarget(element);
+      const offsetTop = this.getScrollTarget(element);
 
       window.scrollTo({
         top: Math.max(0, offsetTop),
         behavior: 'smooth'
       });
     }
+  }
+
+  private revealScrollTarget(element: HTMLElement) {
+    element.classList.add('is-visible');
+    element
+      .querySelectorAll<HTMLElement>('.fade-in-up, .stagger-slide')
+      .forEach(child => child.classList.add('is-visible'));
+  }
+
+  private getScrollTarget(element: HTMLElement): number {
+    const navbar = document.querySelector('.navbar') as HTMLElement | null;
+    const navbarHeight = navbar?.offsetHeight ?? 96;
+    const spacing = 16;
+    return element.offsetTop - navbarHeight - spacing;
   }
 }

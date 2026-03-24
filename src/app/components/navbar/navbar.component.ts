@@ -97,6 +97,7 @@ export class NavbarComponent {
       return;
     }
 
+    this.revealScrollTarget(element);
     const offsetTop = this.getScrollTarget(element);
     window.scrollTo({
       top: offsetTop,
@@ -104,11 +105,18 @@ export class NavbarComponent {
     });
   }
 
+  private revealScrollTarget(element: HTMLElement) {
+    element.classList.add('is-visible');
+    element
+      .querySelectorAll<HTMLElement>('.fade-in-up, .stagger-slide')
+      .forEach(child => child.classList.add('is-visible'));
+  }
+
   private getScrollTarget(element: HTMLElement): number {
     const navbar = document.querySelector('.navbar') as HTMLElement | null;
     const navbarHeight = navbar?.offsetHeight ?? 96;
-    const spacing = 12;
-    const top = window.scrollY + element.getBoundingClientRect().top - navbarHeight - spacing;
+    const spacing = 16;
+    const top = element.offsetTop - navbarHeight - spacing;
     return Math.max(0, top);
   }
 }
