@@ -1,59 +1,83 @@
-# PortfolioV1
+# Portfolio v1
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.19.
+Personal portfolio built with Angular and Tailwind CSS.
 
-## Development server
+The site showcases software projects, supports English and French, and includes dedicated pages for each featured project.
 
-To start a local development server, run:
+## Tech stack
 
-```bash
-ng serve
-```
+- Angular 19 (standalone components)
+- TypeScript
+- Tailwind CSS
+- SCSS
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Features
 
-## Code scaffolding
+- Bilingual interface (EN/FR) powered by JSON translation files
+- Responsive landing page with animated sections
+- Dedicated project pages:
+	- Portfolio AI
+	- RPG Evolution (distributed/mobile)
+	- RPG (web full stack)
+	- Robot (embedded systems)
+- Reusable navigation and footer components
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Getting started
 
-```bash
-ng generate component component-name
-```
+### Prerequisites
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- Node.js 18+ (or a version compatible with Angular 19)
+- npm
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Install dependencies
 
 ```bash
-ng test
+npm install
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+### Run locally
 
 ```bash
-ng e2e
+npm start
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Then open:
 
-## Additional Resources
+```text
+http://localhost:4200/
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Scripts
+
+- `npm start`: start development server
+- `npm test`: run unit tests
+- `npm run build`: create production build
+
+## Project structure
+
+```text
+src/
+	app/
+		components/      # Shared UI blocks (navbar, footer)
+		pages/           # Route pages (home, project pages)
+		shared/          # Shared services, pipe, styles
+public/
+	i18n/              # Translation files (en.json, fr.json)
+```
+
+## Localization
+
+Translations are managed in:
+
+- `public/i18n/en.json`
+- `public/i18n/fr.json`
+
+Keys are consumed through the custom translation pipe in templates.
+
+## Build
+
+```bash
+npm run build
+```
+
+Production artifacts are emitted to the Angular output directory configured in the workspace.
