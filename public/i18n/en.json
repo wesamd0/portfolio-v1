@@ -147,6 +147,7 @@
     "galleryTitle": "Project Gallery",
     "galleryCaption": "Live portfolio with AI assistant and bilingual support",
     "deploymentTitle": "Deployment",
+    "githubLink": "View GitHub Repository",
     "deploymentLink": "View Live Portfolio"
   }
 }

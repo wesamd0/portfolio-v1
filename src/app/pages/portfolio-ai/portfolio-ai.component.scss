@@ -161,6 +161,7 @@
   flex-wrap: wrap;
   margin-top: 1rem;
 
+  .btn-github,
   .btn-deployed {
     @include ui.magnetic-button;
     display: inline-flex;
